@@ -1,45 +1,81 @@
-<!DOCTYPE html>
-<head>
-  <title>About rushb1331</title>
+ <title>About rushb1331</title>
   <html lang="en"></html>
+<head>
   <meta charset="UTF-8">
-  <META NAME="ROBOTS" CONTENT="NOINDEX, FOLLOW">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
-		background-color: black;
-	  }
-    p:not(.hidden) {
-	  color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 15;
+      background: linear-gradient(to right, #1f1f1f, #00394f);
+      color: white;
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
     }
 
-    
-      h1:not(.hidden) {
-        color: white;
+  .btn {
+    display: inline-block;      
+    padding: 10px 20px;     
+    background-color: #f6e8ff;   
+    color: black;               
+    text-decoration: none;      
+    border-radius: 20px;          
+    font-weight: bold;      
+    width: auto;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    flex: 0 0 auto; 
+    text-align: center
+}
+
+.btn:hover {
+    background-color: #a3ffab;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+
+    .content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
     }
 
-    h2:not(.hidden) {
-        color: white;
+    h1 {
+      margin-bottom: 20px;
+    }
+
+    p {
+      max-width: 600px;
+      line-height: 1.2;
+    }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+    }
+
+    .socials a {
+      display: inline-block;
+      margin: 0 10px;
+      font-size: 28px;
+      color: white;
+      transition: 0.3s;
+    }
+
+    .socials a:hover {
+      color: #4cafef;
+      transform: scale(1.2);
     }
     
-    a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
-}
-a:visited {
-  color:pink;
-  background-color: white;
-  text-decoration: none;
-}
-a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
-}
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+    .invisible-wrapper {
+    display: inline-block;
+    text-align: center;
 }
   </style>
 </head>
@@ -53,14 +89,17 @@ a:active {
     <p>i realy dont know what to place here lol :P</p>
     <p>my favorite color is purple</p>
     <p>and my second favorite color is green</p>
-
-    <h2>what is collabvm?</h2>
-    <p>collabvm is a site that hosts virtualmachines [vms] in a way that anyone can use</p>
-    <p>it has some features like a chat a reset button a bot that allows you to install any os [and soo much more <p>
-    <p>thers even another site [made by tbe same people] called uservm</p>
-    <p>on this site the users of collab vm that host the vms [this can and will cause caos]</p>
-    <a href="..">Go Back to Homepage</a>
-    <a href="My specs/">my specs</a>
-    <script type="text/javascript" src="https://counter.websiteout.com/js/35/10/0/1"></script>
-    <p class="hidden">always pirate nintendo and adobe and microsoft :3</p>
+    <p>also im a furry btw :3</p>
+   
+    <div class="footer">
+    <div class="socials">
+      <a href="https://discord.gg/65Dx9Ynq" target="_blank"><i class="fa-brands fa-discord"></i></a>
+      <a href="https://github.com/rushb1331uwu" target="_blank"><i class="fa-brands fa-github"></i></a>
+      <a href="https://www.reddit.com/u/Rushb133/s/kN5DWKIY6Z" target="_blank"><i class="fa-brands fa-reddit"></i></a>
+      <a href="https://www.xbox.com/pt-BR/play/user/rushb1331owo" target="_blank"><i class="fa-brands fa-xbox"></i></a>
+    </div>
+  </div>
+  <div class="invisible-wrapper">
+    <a href=".." class="btn">Go Back to Homepage</a>
+</div>
 </body>

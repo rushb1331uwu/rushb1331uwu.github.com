@@ -1,29 +1,98 @@
-<link rel="stylesheet" href="mystyle.css">
-<title>c00l sites :3</title>
-<style>
-  a:link {
-  color: green;
-  background-color: transparent;
-  text-decoration: none;
+<!DOCTYPE html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ɛ: uwu</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      background: linear-gradient(to right, #1f1f1f, #00394f);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+    
+a {
+    display: inline-block;           
+    padding: 8px 16px;              
+    background: #f3ebff;             
+    color: black;                    
+    text-decoration: none;      
+    border-radius: 2px;              
+    font-weight: bold;
+    transition: transform 0.2s ease, box-shadow 0.2s ease; 
 }
-a:visited {
-  color:pink;
-  background-color: white;
-  text-decoration: none;
-}
+
 a:hover {
-  color: red;
-  background-color: transparent;
-  text-decoration: underline;
+    transform: scale(1.1); 
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
 }
-a:active {
-  color: yellow;
-  background-color: transparent;
-  text-decoration: underline;
+
+    .content {
+      background: rgba(0, 0, 0, 0.5);
+      padding: 20px 30px;
+      border-radius: 12px;
+      max-width: 600px;
+    }
+    .btn {
+    display: inline-block;      
+    padding: 10px 20px;     
+    background-color: #f6e8ff;   
+    color: black;               
+    text-decoration: none;      
+    border-radius: 20px;          
+    font-weight: bold;      
+    width: auto;
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease;
+    flex: 0 0 auto; 
+    text-align: center
 }
+
+.link-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.horizontal-links {
+    display: flex;
+    gap: 10px;
+    flex-wrap: nowrap; 
+}
+
+.centered-links {
+    display: flex;
+    justify-content: center; 
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+
+.btn:hover {
+    background-color: #a3ffab;
+    transform: scale(1.1);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
+ .invisible-wrapper {
+    display: inline-block;
+    text-align: center;
+ }
 </style>
   <body>
-  <p><a href="..">Go Back to Homepage</a></p>
+     <div class="invisible-wrapper">
+    <a href="#" class="btn" onclick="window.close(); return false;">Go back to homepage</a>
+    <p></p>
+  </div>
+  <div class="link-container">
+    <div class="horizontal-links"></div>
+    <div class="centered-links"></div>
+</div>
 	<a href="https://github.com/timschneeb/awesome-shizuku">very cool shizuku apps list </a>
 	<p></p>
 	<a href="https://github.com/Generator/Awesome-Android-TV-FOSS-Apps">c00l foss tv apps</a>
@@ -44,7 +113,47 @@ a:active {
 	<p></p>
 	<a href="https://music.youtube.com/playlist?list=PLVB2oQlsamQLj9FOrYEN3R1FP8szEEGNR">my new playlist</a>
 	<p></p>
-	<a href="https://computernewb.com/collab-vm/">collab-vm</a>
-	<p></p>
-	<a href="https://github.com/Benjamin-Dobell/Heimdall">Heimdall</a>
+	<!-- all the js code bellow is from chatgpt and idk if it works or not -->
+ <script>
+function distributeLinks() {
+    const allLinks = Array.from(document.querySelectorAll('.link-container a'));
+    const horizontalContainer = document.querySelector('.horizontal-links');
+    const centeredContainer = document.querySelector('.centered-links');
+
+    horizontalContainer.innerHTML = '';
+    centeredContainer.innerHTML = '';
+
+    const containerWidth = horizontalContainer.clientWidth;
+    let currentWidth = 0;
+    let count = 0;
+
+    
+    for (let link of allLinks) {
+        link.style.display = 'inline-block'; // reset
+        const linkWidth = link.offsetWidth + 10;
+        if (currentWidth + linkWidth <= containerWidth) {
+            currentWidth += linkWidth;
+            count++;
+        } else {
+            break;
+        }
+    }
+
+    if (count === 0) {
+        allLinks.forEach(link => centeredContainer.appendChild(link));
+    } else {
+
+        for (let i = 0; i < count; i++) {
+            horizontalContainer.appendChild(allLinks[i]);
+        }
+        for (let i = count; i < allLinks.length; i++) {
+            centeredContainer.appendChild(allLinks[i]);
+        }
+    }
+}
+
+window.addEventListener('load', distributeLinks);
+window.addEventListener('resize', distributeLinks);
+ </script>
   </body>
+  
