@@ -90,10 +90,6 @@ a:hover {
     <a href="#" class="btn" onclick="window.close(); return false;">Go back to homepage</a>
     <p></p>
   </div>
-  <div class="link-container">
-    <div class="horizontal-links"></div>
-    <div class="centered-links"></div>
-</div>
 	<a href="https://github.com/timschneeb/awesome-shizuku">very cool shizuku apps list </a>
 	<a href="https://github.com/Generator/Awesome-Android-TV-FOSS-Apps">c00l foss tv apps</a>
 	<a href="https://wiki.termux.com/wiki/Termux-usb">termux usb (give acess to usb devices on termux)</a>
@@ -126,48 +122,5 @@ a:hover {
 		<a href="https://github.com/owen-the-kid/TwitchTB">TwitchTB</a>
 	<a href="https://github.com/wxxsfxyzm/InstallerX-Revived">installerx revived</a>
 	<a href="https://github.com/ViscousPot/GitSync">GitSync android</a>
-	
-	<!-- all the js code bellow is from chatgpt and idk if it works or not -->
- <script>
-function distributeLinks() {
-    const allLinks = Array.from(document.querySelectorAll('.link-container a'));
-    const horizontalContainer = document.querySelector('.horizontal-links');
-    const centeredContainer = document.querySelector('.centered-links');
-
-    horizontalContainer.innerHTML = '';
-    centeredContainer.innerHTML = '';
-
-    const containerWidth = horizontalContainer.clientWidth;
-    let currentWidth = 0;
-    let count = 0;
-
-    
-    for (let link of allLinks) {
-        link.style.display = 'inline-block'; // reset
-        const linkWidth = link.offsetWidth + 10;
-        if (currentWidth + linkWidth <= containerWidth) {
-            currentWidth += linkWidth;
-            count++;
-        } else {
-            break;
-        }
-    }
-
-    if (count === 0) {
-        allLinks.forEach(link => centeredContainer.appendChild(link));
-    } else {
-
-        for (let i = 0; i < count; i++) {
-            horizontalContainer.appendChild(allLinks[i]);
-        }
-        for (let i = count; i < allLinks.length; i++) {
-            centeredContainer.appendChild(allLinks[i]);
-        }
-    }
-}
-
-window.addEventListener('load', distributeLinks);
-window.addEventListener('resize', distributeLinks);
- </script>
   </body>
   
