@@ -72,7 +72,6 @@ const pickr = Pickr.create({
     }
 });
 
-// Update selected color text and optionally change its color
 pickr.on('change', (color) => {
     const hex = color.toHEXA().toString();
     const selectedText = document.getElementById('selected-color');
