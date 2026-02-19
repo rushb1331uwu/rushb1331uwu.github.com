@@ -3,13 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <canvas id="canvas-basic"></canvas>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 15;
-      background: linear-gradient(to right, #1f1f1f, #00394f);
+      margin: 2;
+      padding: 18;
       color: white;
       display: flex;
       flex-direction: column;
@@ -51,7 +51,7 @@
     }
 
     p {
-      max-width: 600px;
+      max-width: 680px;
       line-height: 1.2;
     }
 
@@ -72,6 +72,17 @@
       color: #4cafef;
       transform: scale(1.2);
     }
+    #canvas-basic {
+    position: fixed;
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+}
     
     .invisible-wrapper {
     display: inline-block;
@@ -81,6 +92,24 @@
 </head>
 
 <body>
+  <script src="https://cdn.jsdelivr.net/npm/granim@2.0.0/dist/granim.min.js"></script>
+<script>
+var granimInstance = new Granim({
+    element: '#canvas-basic',
+    direction: 'radial',
+    isPausedWhenNotInView: true,
+    states : {
+        "default-state": {
+            gradients: [
+                ['#000000', '#71009C'],
+                ['#000000', '#0037FF'],
+                ['#000000', '#FAFF00'],
+                ['#000000', '#00FF01']
+            ]
+        }
+    }
+});
+ </script>
     <h1>About Rushb1331</h1>
     <p> im a school stundent that likes coding and other nerdy stuf</p>
     <p>i realy like how computers work and also how do you code for them</p>
