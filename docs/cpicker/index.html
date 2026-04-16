@@ -6,7 +6,7 @@
 <title>Color Picker</title>
 
 <!-- Pickr CSS via CDN -->
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/monolith.min.css"/>
 
 <style>
   body {
@@ -59,13 +59,15 @@
 <script>
 const pickr = Pickr.create({
     el: '#color-picker',
-    theme: 'classic', // 'classic', 'monolith', 'nano'
+    theme: 'monolith', // 'classic', 'monolith', 'nano'
     default: '#ff0000',
     components: {
         preview: true,
         opacity: true,
         hue: true,
         interaction: {
+            hex: true,
+            rgba: true,
             input: true,
             save: true
         }
@@ -74,8 +76,9 @@ const pickr = Pickr.create({
 
 pickr.on('change', (color) => {
     const hex = color.toHEXA().toString();
+    const rgba = color.toRGBA().toString(0);
     const selectedText = document.getElementById('selected-color');
-    selectedText.textContent = `Selected color: ${hex}`;
+    selectedText.textContent = `Selected color: ${hex} ${rgba}`;
     selectedText.style.color = hex;
 });
 </script>
